@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+.container-home {
+    position: relative;
+    width: 100%;
+    min-height: 800px;
+    background: url("../../public/image_19.png") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* đẩy nội dung về bên trái */
+    color: #fff;
+    padding: 60px 24px; /* thêm padding trái để tránh dính sát mép */
+    
+  }
+  
+  /* Lớp phủ mờ và tối */
+  .container-home::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(3px);
+  }
+  
+  /* Đảm bảo nội dung nằm TRÊN overlay */
+.content-home {
+    position: relative;
+    z-index: 10;
+    max-width: 700px;
+    text-align: left; /* đảm bảo chữ canh trái */
+    font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+    margin-bottom: 200px;
+    /* hiệu ứng xuất hiện khi vào Trang chủ */
+    animation: slide-in-left 600ms ease-out both;
+  }
+
+.content-home h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: clamp(36px, 4.8vw, 50px);
+
+}
+
+.content-home p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 1.6vw, 15px);
+  line-height: 1.6;
+}
+
+/* Ghi đè bootstrap .container khi bạn dùng kèm class content-home */
+.content-home.container {
+  max-width: 700px !important;
+  padding-left: 100px !important;
+  padding-right: 0 !important;
+
+  margin-left: 0 !important;   /* bỏ căn giữa của .container */
+  /* margin-right: auto !important; */
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+  

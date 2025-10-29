@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
+/* Đã chuyển sang render có điều kiện theo route, không ẩn bằng CSS nữa */
+
+
+/* Darker navbar theme - chỉ áp dụng cho navbar đen (bg-dark) */
+.navbar.bg-dark {
+  background-color: #000000 !important; /* đen hơn */
+}
+
+.navbar.bg-dark .navbar-brand,
+.navbar.bg-dark .nav-link {
+  color: #f1f1f1 !important;
+  font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.navbar.bg-dark .nav-link:hover,
+.navbar.bg-dark .nav-link:focus {
+  color: #58a6ff !important;
+}
+.navbar.bg-dark .nav-link.active {
+  color: #58a6ff !important; /* active = màu khi hover link */
+}
+
+/* Đổi màu khi hover từng mục (chỉ mục đang trỏ chuột) */
+.navbar.bg-dark .navbar-brand,
+.navbar.bg-dark .nav-link {
+  transition: color 180ms ease-in-out;
+}
+.navbar.bg-dark .navbar-brand:hover {
+  color: #ff6ec4 !important; /* màu hover cho Trang chủ */
+}
+.navbar.bg-dark .nav-link:hover {
+  color: #58a6ff !important; /* màu hover chung cho các link */
+}
+
+/* Brand gradient base and active state */
+.nav-text-gradient {
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+}
+.nav-text-gradient-active {
+  background: linear-gradient(90deg, #ffa3da, #9fa0ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+}
+
+/* Tăng nhẹ kích thước chữ cho điều hướng */
+.navbar.bg-dark .navbar-brand { font-size: 1.05rem; }
+.navbar.bg-dark .nav-link { font-size: 1rem; }
+
+.navbar.bg-dark .btn-outline-success {
+  border-color: #8bc34a;
+  color: #8bc34a;
+}
+.navbar.bg-dark .btn-outline-success:hover {
+  background-color: #8bc34a;
+  color: #000;
+}
+.contact-info {
+  display: flex;
+  gap: 12px;
+}
+.contact-info span {
+  color: #bdbdbd;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+.navbar .container-fluid {
+    max-height: 400px;
+  }
