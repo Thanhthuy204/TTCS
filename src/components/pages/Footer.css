@@ -1,0 +1,96 @@
+.site-footer{
+    background:#0f0f10;
+    color:#e7e7e9;
+    padding: 40px 0 0;
+    border-top: 1px solid rgba(255,255,255,.06);
+    position: relative;
+  }
+  .footer-inner{
+    background:#1a1b1d;
+    border-radius: 20px;
+    padding: 32px;
+    display: grid;
+    gap: 28px;
+    grid-template-columns: 1.2fr .8fr .8fr 1fr;
+  }
+  
+  /* About */
+  .logo{
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: .5px;
+  }
+  .logo span{ color:#ff6b2b; }
+  .about-text{ margin: 12px 0 14px; line-height: 1.6; color:#cfcfd2; }
+  
+  .contact-list{ list-style:none; padding:0; margin:0 0 16px; }
+  .contact-list li{
+    display:flex; gap:10px; align-items:flex-start;
+    margin: 6px 0; color:#d7d7db;
+  }
+  .contact-list .icon{ font-weight:600; color:#fff; }
+  
+  .socials{ display:flex; gap:10px; margin-top: 8px; }
+  .socials a{
+    width:36px; height:36px; display:grid; place-items:center;
+    border-radius:50%; background:#2a2b2e; color:#fff; text-decoration:none;
+    transition: transform .2s ease, background .2s ease;
+  }
+  .socials a:hover{ transform: translateY(-2px); background:#3a3b3f; }
+  
+  /* Link columns */
+  .col h4{ margin:0 0 10px; font-size:22px; color:#fff; }
+  .col.links a{
+    display:block; text-decoration:none; color:#cfcfd2;
+    padding:6px 0; transition: color .15s ease;
+  }
+  .col.links a:hover{ color:#fff; }
+  
+  /* Support card */
+  .support-card{
+    background: linear-gradient(135deg,#ff8b3d,#ff4d61,#a234ff);
+    border-radius: 20px;
+    padding: 18px;
+    color:#fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  }
+  .support-card h3{ margin:0 0 12px; font-size:26px; }
+  
+  .support-card .call{
+    display:flex; gap:12px; align-items:center;
+    background:#fff; color:#111; text-decoration:none;
+    border-radius: 999px; padding:10px 14px; margin: 8px 0 12px;
+  }
+  .support-card .badge{
+    width:34px; height:34px; display:grid; place-items:center;
+    background: #ffe3e3; border-radius: 50%;
+  }
+  .support-card .sub{ font-size:12px; color:#555; line-height:1.1; }
+  .support-card .phone{ font-weight:800; font-size:18px; }
+  
+  .support-card .zalo{
+    display:flex; align-items:center; gap:8px;
+    background:#fff; color:#111; text-decoration:none;
+    border-radius: 12px; padding:10px 12px;
+  }
+  .support-card .zalo img{
+    width:24px; height:24px; object-fit:contain;
+  }
+  
+  /* Bottom bar */
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.06);
+    margin-top: 20px;
+    padding: 12px 0;
+    text-align:center;
+    color:#a9abb0;
+  }
+  
+  /* Responsive */
+  @media (max-width: 992px){
+    .footer-inner{ grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 576px){
+    .footer-inner{ grid-template-columns: 1fr; padding:20px; }
+  }
+  

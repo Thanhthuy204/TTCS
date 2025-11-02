@@ -1,0 +1,88 @@
+/* Introduction.css */
+
+/* Căn giữa “Trang chủ > Giới thiệu” */
+.breadcrumb-centered{
+    text-align:center;
+    margin:24px 0 12px;
+    color:#cfcfd2;
+    font-size:14px;
+  }
+  .breadcrumb-centered a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:500;
+  }
+  .breadcrumb-centered a:hover{ text-decoration:underline; }
+  
+  /* Hero container */
+  .hero-intro{
+    /* chiều cao + bo góc + bóng */
+    min-height: 420px;
+    border-radius: 36px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,.35);
+    /* canh giữa nội dung */
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding: 72px 24px;
+    margin: 0 auto 28px;
+    max-width: 1240px;
+  
+    background:
+  radial-gradient(1200px 600px at 0% 100%, rgba(158,58,189,.35), rgba(0,0,0,0) 60%),
+  radial-gradient(1000px 500px at 100% 0%, rgba(255,71,87,.25), rgba(0,0,0,0) 55%),
+  linear-gradient(180deg, #0b0b0f 0%, #0a0a0a 100%);
+
+  }
+  
+  /* Nội dung bên trong */
+  .hero-content{
+    max-width: 900px;
+    padding: 0 16px;
+  }
+  .hero-content h1{
+    font-size: clamp(28px, 4vw, 56px);
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: .2px;
+    margin: 0 0 16px;
+    color: #ffffff;        /* ✅ Trắng rõ */
+  opacity: 1;            /* ✅ Không mờ */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4); /* 👌 tạo chiều sâu nhẹ */
+  }
+  .hero-content p{
+    font-size: clamp(16px, 1.8vw, 20px);
+    line-height: 1.7;
+    color:#e9e9ec;
+    margin: 0 auto;
+    text-wrap: pretty;
+  }
+  
+  /* Mobile nhỏ hơn: tăng padding & bo góc */
+  @media (max-width: 576px){
+    .hero-intro{ padding: 56px 18px; border-radius: 24px; }
+  }
+  .breadcrumb-centered {
+    text-align: center;
+    margin: 24px 0 12px;
+    font-size: 16px;
+    color: #000;          /* 👈 Màu đen cho toàn bộ dòng */
+    font-weight: 500;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .breadcrumb-centered a {
+    color: #000;          /* 👈 Màu đen cho chữ “Trang chủ” */
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .breadcrumb-centered a:hover {
+    text-decoration: underline;
+    color: #000;          /* vẫn giữ đen khi hover */
+  }
+  
+  

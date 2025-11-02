@@ -3,12 +3,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { BsHouseDoorFill, BsTelephoneFill, BsEnvelopeFill } from 'react-icons/bs';
 import './Navbar.css';
 
 const NavbarHome = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const isProducts = location.pathname === '/products';
 
   return (
@@ -49,7 +50,7 @@ const NavbarHome = () => {
     
 
     {/* Tìm kiếm sản phẩm */}
-    <form className="d-flex flex-grow-1 me-3 search-form">
+    <form className="d-flex flex-grow-1  search-form">
       <input
         className="form-control search-input"
         type="search"
@@ -61,12 +62,15 @@ const NavbarHome = () => {
     </form>
 
     {/* Giỏ hàng + Đăng nhập */}
-    <button className="btn btn-outline-dark me-3">
-      <i className="bi bi-cart3"></i> Sign up
-    </button>
-    <button className="btn btn-outline-dark">
+    {location.pathname !== '/signin' && (
+      <button className="btn btn-outline-dark me-3" onClick={() => navigate('/signin')}>
+        <i className="bi bi-cart3"></i> Đăng nhập
+      </button>
+    )}
+
+          {/* <button className="btn btn-outline-dark" onClick={() => navigate('/signin')}>
       <i className="bi bi-person"></i> Sign in
-    </button>
+    </button> */}
 
   </div>
 </nav>
