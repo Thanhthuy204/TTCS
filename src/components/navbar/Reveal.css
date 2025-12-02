@@ -1,0 +1,6 @@
+.reveal { opacity: 0; transform: translateY(20px); transition: all .6s ease; }
+.reveal.from-up    { transform: translateY(20px); }
+.reveal.from-down  { transform: translateY(-20px); }
+.reveal.from-left  { transform: translateX(-24px); }
+.reveal.from-right { transform: translateX(24px); }
+.reveal.reveal-in  { opacity: 1; transform: none; }

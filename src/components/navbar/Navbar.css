@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
-/* Đã chuyển sang render có điều kiện theo route, không ẩn bằng CSS nữa */
-
 
 /* Darker navbar theme - chỉ áp dụng cho navbar đen (bg-dark) */
 .navbar.bg-dark {
@@ -23,17 +20,38 @@
   color: #58a6ff !important; /* active = màu khi hover link */
 }
 
-/* Đổi màu khi hover từng mục (chỉ mục đang trỏ chuột) */
+/* Đổi màu khi hover từng mục (hiệu ứng đỏ → tím) */
 .navbar.bg-dark .navbar-brand,
 .navbar.bg-dark .nav-link {
-  transition: color 180ms ease-in-out;
+  transition: all 0.3s ease-in-out; /* chuyển mượt hơn */
 }
+
+/* Hover: gradient đỏ → tím */
+.navbar.bg-dark .nav-link:hover,
 .navbar.bg-dark .navbar-brand:hover {
-  color: #ff6ec4 !important; /* màu hover cho Trang chủ */
+  background: linear-gradient(90deg, #e63946, #9d4edd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
 }
+
+/* Hiệu ứng hover gradient đỏ -> tím cho tất cả nav-link */
 .navbar.bg-dark .nav-link:hover {
-  color: #58a6ff !important; /* màu hover chung cho các link */
+  background: linear-gradient(90deg, #e63946, #9d4edd); /* đỏ -> tím */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  transition: all 0.3s ease;
 }
+
+/* Nếu bạn muốn cả mục active (đang ở trang đó) cũng có hiệu ứng giống */
+.navbar.bg-dark .nav-link.active {
+  background: linear-gradient(90deg, #ff4d4d, #9d4edd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+}
+
 
 /* Brand gradient base and active state */
 .nav-text-gradient {
@@ -74,3 +92,170 @@
 .navbar .container-fluid {
     max-height: 400px;
   }
+
+
+/* Áp dụng font sans-serif cho navbar */
+.navbar,
+.navbar .nav-link,
+.navbar .navbar-brand,
+.navbar .btn,
+.contact-info span {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+/* Làm sáng toàn bộ chữ và icon trong phần liên hệ */
+.contact-info span {
+  color: #ffffff; /* trắng sáng hoàn toàn */
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+form {
+    display: flex;
+    gap: 8px;
+}
+
+
+
+
+
+/* --- Thanh tìm kiếm đặt trên nền tối / banner --- */
+.white-navbar {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.form-search,
+.form-sreach {                 /* bạn có 2 class, giữ cả hai để tránh sai chính tả */
+  flex: 1;                     /* cho phép form chiếm phần còn lại giữa logo và nút */
+  display: flex;
+  justify-content: center;     /* căn giữa theo trục ngang */
+  padding: 0 100px;
+  min-width: 400px;
+}
+
+/* Khung form: pill + viền trắng + trong suốt */
+.search-form {
+  position: relative;
+  width: 100%;
+  max-width: 980px;            /* bề rộng tối đa giống ảnh */
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  border-radius: 999px;
+  background: rgba(0,0,0,0.12);/* layer rất nhẹ để tách khỏi nền */
+  top : -5px;                     /* đẩy lên trên một chút */
+}
+
+/* Input: chữ & placeholder trắng, chừa chỗ cho nút tròn bên phải */
+.search-input {
+  width: 100%;
+  height: 50px;
+  padding: 0 96px 0 24px;      /* chừa ~96px cho nút */
+  border: none;
+  outline: none;
+  background: transparent;
+  color: black;
+  font-size: 1.15rem;
+  border-radius: 999px;        /* giữ bo tròn khi focus */
+}
+
+.search-input::placeholder {
+  color: rgba(37, 33, 33, 0.92);
+}
+/* Ẩn nút X trong ô tìm kiếm (Chrome, Edge, Opera) */
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+
+/* Focus viền sáng nhẹ */
+.search-input:focus {
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.12);
+}
+
+/* Nút tròn gradient “thò” ra ngoài viền */
+.search-btn {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg,
+    #ff7a00 0%,
+    #ff3d00 35%,
+    #e91e63 70%,
+    #7b1fa2 100%
+  );
+  color: #fff;
+  cursor: pointer;
+  transition: transform .15s ease, filter .15s ease;
+}
+
+/* Icon kính lúp to vừa đủ */
+.search-btn i {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+/* Hover/active nút */
+.search-btn:hover { transform: translateY(-50%) scale(1.05); filter: brightness(1.06); }
+.search-btn:active { transform: translateY(-50%) scale(0.97); }
+
+/* Viền “đậm” kiểu ảnh (tùy chọn) */
+.search-form::before {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: 999px;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.95);
+}
+
+
+/* Giữ nguyên chiều cao của navbar trắng */
+nav.white-navbar {
+  background: transparent !important;
+  height: 80px; /* chiều cao cố định */
+  display: flex;
+  align-items: center;
+  overflow: visible; /* cho phép chữ to vượt ra một chút mà không làm dãn thanh */
+}
+
+/* Chỉ to chữ SoftKey mà không dãn navbar */
+.brand-softkey {
+  font-size: 2.8rem !important;       /* bạn có thể tăng đến 3.5rem nếu muốn nổi bật hơn */
+  font-weight: 900;
+  letter-spacing: 0px;
+  line-height: 1.2;        /* không dãn dòng */
+  margin: 0 !important;             /* loại bỏ margin mặc định của h1 */
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  top: -7px; /* nâng chữ lên một chút cho cân đối với thanh tìm kiếm */
+}
+
+/* Hiệu ứng hover tinh tế */
+.brand-softkey:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+.btn-sigup-signin {
+  position: relative;
+  top: -8px; /* Đẩy cụm nút lên cao hơn 6px */
+}
+
+
+
+
+
+

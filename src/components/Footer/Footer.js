@@ -2,16 +2,16 @@ import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube, FaPhoneAlt } from "react
 import { FaLocationDot } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import './Footer.scss';
-export default function Footer() {
+const  Footer = () =>{
   return (
     <footer className="site-footer">
       <div className="footer-inner container">
         {/* Logo + About + Social */}
         <div className="col about">
-          <div className="logo">Sam<span>Shop</span></div>
+          <div className="logo">Soft<span>Key</span></div>
 
           <p className="about-text">
-            <strong>Sam Shop</strong> – Địa chỉ uy tín cung cấp phần mềm bản quyền chính hãng,
+            <strong>SoftKey</strong> – Địa chỉ uy tín cung cấp phần mềm bản quyền chính hãng,
             đảm bảo chất lượng, an toàn và tin cậy cho mọi giao dịch của bạn.
           </p>
 
@@ -19,7 +19,7 @@ export default function Footer() {
             <li><span className="icon"></span> 0368413971</li>
             <li><FaLocationDot /> ABCDEFGHIJKLMNOPQRSTUVWXYZ</li>
             <li><FaPhoneAlt /> 0368413971</li>
-            <li><IoMdMail /> cskh@samshop.com</li>
+            <li><IoMdMail /> cskh@softkey.com</li>
             <li><span className="icon">⏰</span> 9:00 – 21:00</li>
           </ul>
 
@@ -63,13 +63,13 @@ export default function Footer() {
             <a className="call" href="tel:0326923071">
               <span className="badge">📞</span>
               <div>
-                <div className="sub">Gọi Sam</div>
+                <div className="sub">Gọi Softkey</div>
                 <div className="phone">0368413971</div>
               </div>
             </a>
 
             <a className="zalo" href="https://zalo.me/" target="_blank" rel="noreferrer">
-              <img alt="" src="./zalo.jpg" />
+              <img alt="" src='../../assets/zalo.png' />
               <span>Báo cáo sự cố</span>
             </a>
           </div>
@@ -82,3 +82,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+export default Footer;

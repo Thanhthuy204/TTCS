@@ -62,39 +62,92 @@
   /* margin-right: auto !important; */
 }
 
-@keyframes slide-in-left {
-  from {
-    opacity: 0;
-    transform: translateX(-40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
+
 
   /* Khối giới thiệu Sam Shop */
-.container-Samshop {
+.container-softkey-info {
+  position: relative;
   text-align: center;
   padding: 80px 24px;
   background-color: #f8f8f8; /* nền sáng nhẹ */
 }
 
 /* Tiêu đề: gradient đỏ-cam đẹp */
-.sam-title {
+.softkey-title {
   font-size: 48px;
   font-weight: 700;
-  background: linear-gradient(90deg, #ff7b00, #ff3d3d, #d63384); /* cam → đỏ → hồng */
+  background: linear-gradient(90deg, #ff7b00, #ff3d3d, #d63384);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; /* tạo hiệu ứng chữ chuyển màu */
+  color: transparent;
+  background-color: #fff; /* nền riêng để chữ không trong suốt */
+  display: inline-block;
   margin-bottom: 24px;
 }
 
+
+
 /* Đoạn mô tả căn giữa, chữ đen */
-.sam-description {
+.softkey-description {
   font-size: 20px;
   line-height: 1.6;
   color: #111; /* chữ đen */
   max-width: 900px;
   margin: 0 auto;
 }
+
+
+
+/* Nếu có lớp phủ tối thì để nó nằm dưới chữ */
+.container-home::after{
+  content: "";
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 0;                /* lớp phủ dưới nội dung */
+}
+
+.content-home{
+  position: relative;
+  z-index: 1;                /* chữ nổi lên trên lớp phủ */
+  padding: 48px 0;
+}
+
+
+.carousel-wrapper{
+  position: relative;
+  z-index: 3;                /* cao hơn banner */
+  margin-top: -120px;        /* kéo chồng lên banner (âm = chồng lên) */
+}
+
+/* Trang trí cho ảnh carousel */
+.carousel-item img{
+  height: 150px;             /* tùy bạn */
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.25);
+}
+
+/* 1) Biến vùng hero thành khung chứa định vị */
+.container-home{
+  position: relative;      /* rất quan trọng */
+  padding: 16px 0 32px;    /* khoảng thở trên/dưới */
+  overflow: visible;       /* để phần thò cạnh không bị cắt */
+}
+
+/* 2) Để nội dung bên trái không bị che, chừa chỗ bên phải */
+.container-home .content-home{
+  position: relative;
+  max-width: 1200px;       /* tùy ý theo container của bạn */
+  padding-right: 800px;    /* CHỪA KHOẢNG CHO CAROUSEL (khớp width bên dưới) */
+}
+
+/* 3) Đặt carousel nổi ở góc phải hero */
+.hero-right-peek{
+  position: absolute;
+  right: 24px;             /* cách mép phải */
+  top: 250px;              /* chỉnh cho thẳng hàng tiêu đề */
+  width: 500px;  
+  height: 200px;          /* KHỚP với padding-right ở trên */
+  z-index: 5;              /* nằm trên nền/ảnh hero */
+}
+

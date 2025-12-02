@@ -1,0 +1,67 @@
+/* src/components/CategoryTicker.css */
+
+.ticker-wrap{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 16px 0;
+  background: transparent;            /* hoặc nền bạn muốn */
+}
+
+.ticker-track{
+  display: flex;
+  gap: 20px;
+  width: max-content;                 /* quan trọng để content dài */
+  animation: ticker-scroll 28s linear infinite;
+  will-change: transform;
+}
+
+.ticker-wrap:hover .ticker-track{
+  animation-play-state: paused;       /* hover dừng */
+}
+
+/* Thẻ “chip” */
+.chip{
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,.08);
+  border: 1px solid rgba(0,0,0,.06);
+  white-space: nowrap;
+}
+
+.chip img{
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 6px;                 /* icon bo nhẹ cho đồng bộ */
+}
+
+.chip span{
+  font-weight: 600;
+  font-size: 18px;
+  color: #1b1b1b;
+}
+
+/* Gradient riêng cho nhãn "VPN" (tuỳ thích) */
+.chip span:has(+ img), /* an toàn nếu không hỗ trợ :has thì bỏ */
+.chip span {}
+
+/* Animation cuộn vô hạn */
+@keyframes ticker-scroll{
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* vì đã nhân đôi mảng */
+}
+
+/* Responsive */
+@media (max-width: 768px){
+  .chip{
+    padding: 10px 14px;
+    gap: 10px;
+  }
+  .chip span{ font-size: 16px; }
+  .ticker-track{ gap: 14px; animation-duration: 24s; }
+}

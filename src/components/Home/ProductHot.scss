@@ -1,0 +1,232 @@
+// styles/HotProducts2025.scss
+
+.hot-products-section {
+  padding: 100px 20px;
+  background: url('../../assets/outstand-bg.jpg') center/cover no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50px;
+
+
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 1;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+
+  .main-content {
+    flex: 1;
+    min-width: 300px;
+    color: white;
+    margin-left: 50px;
+  }
+
+  .trend-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    color: #00ff9d;
+    margin-bottom: 20px;
+    font-weight: 600;
+
+    &::before {
+      content: '';
+      width: 40px;
+      height: 2px;
+      background: #00ff9d;
+      border-radius: 1px;
+    }
+  }
+
+  .main-title {
+    font-size: 62px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+
+    @media (max-width: 768px) {
+      font-size: 42px;
+    }
+  }
+
+  .description {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #e0e0e0;
+    margin-bottom: 40px;
+    max-width: 600px;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.4s ease;
+
+    &:hover {
+      background: #e91e63;
+      border-color: #e91e63;
+      transform: translateY(-4px);
+      box-shadow: 0 15px 30px rgba(233, 30, 99, 0.4);
+    }
+  }
+
+  // Danh sách sản phẩm bán chạy
+  .trending-list {
+    margin-right: 100px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 24px;
+    min-width: 380px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+
+    @media (max-width: 992px) {
+      min-width: 100%;
+      margin-top: 50px;
+    }
+  }
+
+  .trending-title {
+    color: white;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .product-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 18px;
+    padding: 16px;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      transform: translateX(8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  .discount-badge {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 80px;height: 80px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 900;
+    font-size: 14px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+
+    .discount-text {
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .off-text {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+  }
+
+  .product-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    object-fit: contain;
+    margin-left: 50px;
+    z-index: 2;
+  }
+
+  .product-info {
+    margin-left: 16px;
+    flex: 1;
+  }
+
+  .product-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 6px;
+    line-height: 1.4;
+  }
+
+  .product-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #e91e63;
+    margin: 0;
+  }
+
+  // Responsive
+  @media (max-width: 992px) {
+    .content-wrapper {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .main-title {
+      font-size: 48px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 80px 15px;
+
+    .main-title {
+      font-size: 38px;
+    }
+
+    .product-card {
+      padding: 14px;
+    }
+
+    .product-title {
+      font-size: 14px;
+    }
+  }
+}

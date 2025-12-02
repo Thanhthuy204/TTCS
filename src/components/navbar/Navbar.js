@@ -6,15 +6,17 @@ import Button from 'react-bootstrap/Button';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { BsHouseDoorFill, BsTelephoneFill, BsEnvelopeFill } from 'react-icons/bs';
 import './Navbar.css';
+import { CiSearch } from "react-icons/ci";
+
 
 const NavbarHome = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const isProducts = location.pathname === '/products';
-
+  
   return (
     <>
-      <Navbar bg="dark" data-bs-theme="dark">
+      <Navbar bg="dark" data-bs-theme="white">
         <Container fluid>
           <Navbar.Brand
             as={Link}
@@ -25,9 +27,6 @@ const NavbarHome = () => {
             Trang chủ
           </Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link as={NavLink} to="/introduction" end>
-              Giới thiệu
-            </Nav.Link>
             <Nav.Link as={NavLink} to="/products" end>
               Sản phẩm
             </Nav.Link>
@@ -41,39 +40,54 @@ const NavbarHome = () => {
       </Navbar>
      
           
-      <nav className="navbar navbar-light bg-white shadow-sm py-3 white-navbar">
-  <div className="container d-flex align-items-center">
+     <nav className="navbar navbar-light bg- shadow-sm py-3 white-navbar">
+  <div className="container d-flex">
 
     {/* Logo */}
-    <a className="navbar-brand fw-bold" href="/">SamShop </a>
+    <h1 className="navbar-brand fw-bold brand-softkey" href="/">SoftKey</h1>
+
+
+    <div className="form-search form-sreach">   
+  <form className="search-form">
+    <input
+      className="search-input"
+      type="search"
+      placeholder="Tìm kiếm sản phẩm"
+    />
+    <button className="search-btn" type="submit" aria-label="Tìm kiếm">
+      <i className="bi bi-search"></i><CiSearch />
+    </button>
+  </form>
+</div>
+
+
 
     
 
-    {/* Tìm kiếm sản phẩm */}
-    <form className="d-flex flex-grow-1  search-form">
-      <input
-        className="form-control search-input"
-        type="search"
-        placeholder="Tìm kiếm sản phẩm"
-      />
-      <button className="btn btn-gradient search-btn" type="submit">
-        <i className="bi bi-search"></i>
-      </button>
-    </form>
+    {/* Đăng ký + Đăng nhập */}
+    <div className='btn-sigup-signin'>
+      <button
+      className="btn btn-outline-dark me-3"
+      onClick={() => navigate('/signup')}
+    >
+      <i className="bi bi-person"></i> Đăng ký
+    </button>
 
-    {/* Giỏ hàng + Đăng nhập */}
     {location.pathname !== '/signin' && (
-      <button className="btn btn-outline-dark me-3" onClick={() => navigate('/signin')}>
+      <button
+        className="btn btn-outline-dark"
+        onClick={() => navigate('/signin')}
+      >
         <i className="bi bi-cart3"></i> Đăng nhập
       </button>
     )}
-
-          {/* <button className="btn btn-outline-dark" onClick={() => navigate('/signin')}>
-      <i className="bi bi-person"></i> Sign in
-    </button> */}
+    </div>
+    
+    
 
   </div>
 </nav>
+
 
       </>
       

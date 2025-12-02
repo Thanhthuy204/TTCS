@@ -1,0 +1,134 @@
+/* Nền tổng thể trang admin (giống màu tím nhạt trong ảnh) */
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  background: whitesmoke; // tuỳ bạn chỉnh
+ 
+    .admin-content{
+      width: 100%;
+      .admin-main{
+        width: 100%;
+        padding: 24px 32px;
+      }
+  }
+}
+
+.sidebar-wrapper {
+  padding: 24px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+/* khi collapsed (nếu bạn dùng state collapsed) */
+.sidebar-wrapper.collapsed {
+  width: 90px;
+}
+
+.sidebar-card {
+  background: #ffffff;
+  border-radius: 5px;
+  padding: 20px 18px;
+  width: 260px;
+  min-height: calc(100vh - 48px);
+
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.12);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header: logo + nút menu */
+.sidebar-header-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.sidebar-menu-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  border: none;
+  background: #f3f4ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.sidebar-menu-btn svg {
+  font-size: 18px;
+}
+
+.sidebar-brand {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* Menu chính */
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Footer (logout + settings) */
+.sidebar-footer-section {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 18px;
+}
+
+/* Item menu */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: #6b7280;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease,
+    box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+.sidebar-link .sidebar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+/* Hover */
+.sidebar-link:hover {
+  background: #f3f4ff;
+  color: #111827;
+}
+
+/* Active giống block xanh trong ảnh */
+.sidebar-link.active {
+  background: linear-gradient(90deg, #EC6F38 0%, #D93332 50%, #6A2AA0 100%) !important;
+  color: #ffffff;
+  box-shadow: 0 10px 22px rgba(59, 130, 246, 0.4);
+  transform: translateY(-1px);
+}
+
+.sidebar-link.active .sidebar-icon {
+  color: #ffffff;
+}
+
+/* collapsed: ẩn chữ, chỉ để icon */
+.sidebar-wrapper.collapsed .sidebar-text {
+  display: none;
+}
+
+.sidebar-wrapper.collapsed .sidebar-card {
+  width: 76px;
+  padding-inline: 12px;
+}
+
+
